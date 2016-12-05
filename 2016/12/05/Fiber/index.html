@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -84,15 +84,43 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="photo">
-<meta property="og:url" content="http://yoursite.com/photo/index.html">
+<meta name="description" content="递归function fib(n){  
+    if(n==1||n==2){  
+        return 1;  
+    }  
+    return fbnq(n-1)+fbnq(n-2);  
+}  
+fbnq(10);  
+//55  
+时间复杂度为O(2^n)，空间复杂度为O(n)
+非递归##　１    function fb(n){        var res = [1,1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用JavaScript实现斐波那契数列">
+<meta property="og:url" content="http://yoursite.com/2016/12/05/Fiber/index.html">
 <meta property="og:site_name" content="MengLingqi">
-<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/UXET8583.png">
-<meta property="og:updated_time" content="2016-12-04T15:55:58.000Z">
+<meta property="og:description" content="递归function fib(n){  
+    if(n==1||n==2){  
+        return 1;  
+    }  
+    return fbnq(n-1)+fbnq(n-2);  
+}  
+fbnq(10);  
+//55  
+时间复杂度为O(2^n)，空间复杂度为O(n)
+非递归##　１    function fb(n){        var res = [1,1">
+<meta property="og:updated_time" content="2016-12-05T14:36:39.351Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="photo">
-<meta name="twitter:image" content="http://oho0zt67d.bkt.clouddn.com/UXET8583.png">
+<meta name="twitter:title" content="利用JavaScript实现斐波那契数列">
+<meta name="twitter:description" content="递归function fib(n){  
+    if(n==1||n==2){  
+        return 1;  
+    }  
+    return fbnq(n-1)+fbnq(n-2);  
+}  
+fbnq(10);  
+//55  
+时间复杂度为O(2^n)，空间复杂度为O(n)
+非递归##　１    function fb(n){        var res = [1,1">
 
 
 
@@ -113,16 +141,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/photo/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/05/Fiber/"/>
 
 
-  <title>
-  
-
-  
-    photo | MengLingqi
-  
-</title>
+  <title> 利用JavaScript实现斐波那契数列 | MengLingqi </title>
 </head>
   
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +165,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -403,10 +425,218 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p><img src="http://oho0zt67d.bkt.clouddn.com/UXET8583.png" alt=""></p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                利用JavaScript实现斐波那契数列
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-05T22:31:55+08:00" content="2016-12-05">
+              2016-12-05
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><pre><code>function fib(n){  
+    if(n==1||n==2){  
+        return 1;  
+    }  
+    return fbnq(n-1)+fbnq(n-2);  
+}  
+fbnq(10);  
+//55  
+</code></pre><p>时间复杂度为O(2^n)，空间复杂度为O(n)</p>
+<h1 id="非递归"><a href="#非递归" class="headerlink" title="非递归"></a>非递归</h1><p>##　１<br>    function fb(n){<br>        var res = [1,1];<br>        if(n == 1 || n == 2){<br>            return 1;<br>        }<br>        for(var i=2;i&lt;n;i++){<br>            res[i] = res[i-1] + res[i-2];<br>        }<br>        return res[n-1];<br>    }<br>    fb(10);<br>    //55</p>
+<p>时间复杂度为O(n)，空间复杂度为O(n)</p>
+<h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><pre><code>function fb(n){  
+    var a,b,res;  
+    a = b = 1;  
+    for(var i=3;i&lt;=n;i++){  
+        res = a + b;  
+        a = b;  
+        b = res;  
+    }  
+    return res;  
+}  
+fb(10);  
+
+//55  
+</code></pre><p>时间复杂度为O(n)，空间复杂度为O(1)</p>
+<h1 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h1><pre><code>function foo(n){  
+  var a=[],state=0;  
+  for(var i=2;i&lt;n;i++){  
+    var sqrt_i = Math.sqrt(i);  
+    if(i%sqrt_i===0){  
+      continue;  
+    }  
+    for(var j=2;j&lt;sqrt_i;j++){  
+      if(i%j===0){  
+        state=1;  
+        break;  
+      }else{  
+        state=0;  
+      }  
+    }  
+   if(state===0){  
+     a.push(i);  
+   }  
+  }  
+  console.log(a);  
+}  
+foo(100)  
+</code></pre><h1 id="无穷的斐波那契数列"><a href="#无穷的斐波那契数列" class="headerlink" title="无穷的斐波那契数列"></a>无穷的斐波那契数列</h1><pre><code>//&quot;无穷&quot;的菲波纳契数据结构  
+function Fib(n, x, y)  
+{  
+    //这里借参数x,y来保留前面的计算结果，即菲波数当前数列到n的最后两个数值  
+    //在实际调用中通常并不用到x、y这两个参数  
+    var a = x || 1;  
+    var b = y || 1;  
+    if(n == 0) b = a;  
+
+    var t;  
+
+    //计算菲波数的算法  
+    for(var i = 2; i &lt;= n + 1; i++)  
+    {  
+        t = b;  
+        b = a + b;  
+        a = t;  
+    }  
+
+    var ret = function(n, x, y){    
+        //构造一个闭包，这个闭包本身包含一个以新起点计算Fib值的函数  
+        x = x || a;  
+        y = y || b;  
+        return Fib(n, x, y);  
+    }  
+
+    //重写valueOf和toString，这样在表达式中可以直接对返回的菲波函数自动求值  
+    //在第五部分我们还会详细讨论到这种用法  
+    ret.valueOf = ret.toString = function()  
+    {  
+        return a;  
+    }  
+    return ret;  
+}  
+var f6 = Fib(6);  //奥妙在这里，f6是一个新起点的菲波数列函数  
+dwn(f6);  
+dwn(f6(4));  
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>客官，打赏一下嘛~~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oho0zt67d.bkt.clouddn.com/IMG_6192.JPG" alt="扶花弄柳 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/05/we-chat/" rel="next" title="WeChat图标的Css实现">
+                <i class="fa fa-chevron-left"></i> WeChat图标的Css实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -454,8 +684,17 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/IMG_6090.JPG"
@@ -545,6 +784,17 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#递归"><span class="nav-number">1.</span> <span class="nav-text">递归</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#非递归"><span class="nav-number">2.</span> <span class="nav-text">非递归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2"><span class="nav-number">2.1.</span> <span class="nav-text">2</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#质数"><span class="nav-number">3.</span> <span class="nav-text">质数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无穷的斐波那契数列"><span class="nav-number">4.</span> <span class="nav-text">无穷的斐波那契数列</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -641,6 +891,10 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
