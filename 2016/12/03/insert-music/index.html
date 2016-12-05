@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="music," />
+  <meta name="keywords" content="music.HTML5,AJAX," />
 
 
 
@@ -123,7 +123,7 @@
 <meta property="og:image" content="http://ohiexi3ad.bkt.clouddn.com/music6.png">
 <meta property="og:image" content="http://ohiexi3ad.bkt.clouddn.com/music8.png">
 <meta property="og:image" content="http://ohiexi3ad.bkt.clouddn.com/music7.png">
-<meta property="og:updated_time" content="2016-12-05T14:38:30.703Z">
+<meta property="og:updated_time" content="2016-12-05T14:47:19.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo NexT主题插入音乐">
 <meta name="twitter:description" content="获取网易云音乐插件外链
@@ -560,7 +560,23 @@
 <p><img src="http://ohiexi3ad.bkt.clouddn.com/music8.png" alt=""></p>
 <p>然后<code>hexo deploy</code>就可以完美的看到播放器惹~~~</p>
 <p><img src="http://ohiexi3ad.bkt.clouddn.com/music7.png" alt=""></p>
-<h2 id="bug2"><a href="#bug2" class="headerlink" title="bug2"></a>bug2</h2>
+<h2 id="bug2"><a href="#bug2" class="headerlink" title="bug2"></a>bug2</h2><p>原则上不同的页面，资源重新加载，音乐的播放会被重置。</p>
+<p>要实现音乐的连续播放，可以尝试使用如下的一些方法：</p>
+<h3 id="主页面使用frame"><a href="#主页面使用frame" class="headerlink" title="主页面使用frame"></a>主页面使用frame</h3><pre><code>&lt;html&gt;
+    &lt;frameset cols=&quot;0%,100%&quot;&gt;
+        &lt;frame src=&quot;music.html&quot;&gt;
+        &lt;frame src=&quot;index.html&quot;&gt;
+    &lt;/frameset&gt;
+&lt;/html&gt;
+</code></pre><p>实际上是隐藏了music.html，只显示index.html，然后页面切换只是在index.html所在的那个frame发生，而主页面和music页面实际未重新加载。</p>
+<p>这样音乐可以连续播放，但缺点是没办法在index.html页面中控制音频播放。</p>
+<h3 id="使用ajax-HTML5-history-API"><a href="#使用ajax-HTML5-history-API" class="headerlink" title="使用ajax+HTML5 history API"></a>使用ajax+HTML5 history API</h3><p>Ajax动态加载非音乐部分的页面，使用HTML5 history API来控制浏览器的前后跳转。</p>
+<pre><code>history.pushState(null, null, link.href);
+</code></pre><p>在按下浏览器回退时，触发popState事件，</p>
+<pre><code>window.addEventListener(&quot;popstate&quot;, function(e) {
+    //loadPreviousPage();
+}
+</code></pre>
       
     </div>
 
@@ -598,7 +614,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/music/" rel="tag">#music</a>
+            <a href="/tags/music-HTML5/" rel="tag">#music.HTML5</a>
+          
+            <a href="/tags/AJAX/" rel="tag">#AJAX</a>
           
         </div>
       
@@ -718,7 +736,7 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -787,7 +805,7 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取网易云音乐插件外链"><span class="nav-number">1.</span> <span class="nav-text">获取网易云音乐插件外链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG"><span class="nav-number">2.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决问题"><span class="nav-number">3.</span> <span class="nav-text">解决问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bug1"><span class="nav-number">3.1.</span> <span class="nav-text">bug1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug2"><span class="nav-number">3.2.</span> <span class="nav-text">bug2</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#获取网易云音乐插件外链"><span class="nav-number">1.</span> <span class="nav-text">获取网易云音乐插件外链</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BUG"><span class="nav-number">2.</span> <span class="nav-text">BUG</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决问题"><span class="nav-number">3.</span> <span class="nav-text">解决问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bug1"><span class="nav-number">3.1.</span> <span class="nav-text">bug1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bug2"><span class="nav-number">3.2.</span> <span class="nav-text">bug2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主页面使用frame"><span class="nav-number">3.2.1.</span> <span class="nav-text">主页面使用frame</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用ajax-HTML5-history-API"><span class="nav-number">3.2.2.</span> <span class="nav-text">使用ajax+HTML5 history API</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
