@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="ajax,jquery,php," />
 
 
 
@@ -84,15 +84,40 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="photo">
-<meta property="og:url" content="http://yoursite.com/photo/index.html">
+<meta name="description" content="需求分析同步处理需要等待数据取出来之后才会执行，这样大大的降低了程序运行的效率，有时候后端返回来的不是一个完整的页面，而是某种格式的数据，例如xml、json、文本等等，这个时候我们就会引出同步和异步的概念了。
+
+同步：简单的来说就是整个页面白屏然后刷新
+异步：只是局部刷新，比如评论点击加载更多
+
+浏览器Ajax请求服务器ajax请求机制如图：
+选择异步请求的方式，常用的有三种，如$.ajax()">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX实现异步处理">
+<meta property="og:url" content="http://yoursite.com/2016/12/06/ajax-yibu/index.html">
 <meta property="og:site_name" content="MengLingqi">
-<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/UXET8583.png">
-<meta property="og:updated_time" content="2016-12-04T15:55:58.000Z">
+<meta property="og:description" content="需求分析同步处理需要等待数据取出来之后才会执行，这样大大的降低了程序运行的效率，有时候后端返回来的不是一个完整的页面，而是某种格式的数据，例如xml、json、文本等等，这个时候我们就会引出同步和异步的概念了。
+
+同步：简单的来说就是整个页面白屏然后刷新
+异步：只是局部刷新，比如评论点击加载更多
+
+浏览器Ajax请求服务器ajax请求机制如图：
+选择异步请求的方式，常用的有三种，如$.ajax()">
+<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/ajax.png">
+<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/ajax_1.png">
+<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/ajax_2.png">
+<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/ajax_3.png">
+<meta property="og:image" content="http://oho0zt67d.bkt.clouddn.com/ajax_4.png">
+<meta property="og:updated_time" content="2016-12-06T14:20:39.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="photo">
-<meta name="twitter:image" content="http://oho0zt67d.bkt.clouddn.com/UXET8583.png">
+<meta name="twitter:title" content="AJAX实现异步处理">
+<meta name="twitter:description" content="需求分析同步处理需要等待数据取出来之后才会执行，这样大大的降低了程序运行的效率，有时候后端返回来的不是一个完整的页面，而是某种格式的数据，例如xml、json、文本等等，这个时候我们就会引出同步和异步的概念了。
+
+同步：简单的来说就是整个页面白屏然后刷新
+异步：只是局部刷新，比如评论点击加载更多
+
+浏览器Ajax请求服务器ajax请求机制如图：
+选择异步请求的方式，常用的有三种，如$.ajax()">
+<meta name="twitter:image" content="http://oho0zt67d.bkt.clouddn.com/ajax.png">
 
 
 
@@ -113,16 +138,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/photo/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/12/06/ajax-yibu/"/>
 
 
-  <title>
-  
-
-  
-    photo | MengLingqi
-  
-</title>
+  <title> AJAX实现异步处理 | MengLingqi </title>
 </head>
   
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +162,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
@@ -403,10 +422,249 @@
 
   <div id="posts" class="posts-expand">
     
-    
-      <p><img src="http://oho0zt67d.bkt.clouddn.com/UXET8583.png" alt=""></p>
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                AJAX实现异步处理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-06T21:51:35+08:00" content="2016-12-06">
+              2016-12-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ajax/" itemprop="url" rel="index">
+                    <span itemprop="name">ajax</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ajax/php/" itemprop="url" rel="index">
+                    <span itemprop="name">php</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h1><p>同步处理需要等待数据取出来之后才会执行，这样大大的降低了程序运行的效率，有时候后端返回来的不是一个完整的页面，而是某种格式的数据，例如xml、json、文本等等，这个时候我们就会引出同步和异步的概念了。</p>
+<ul>
+<li>同步：简单的来说就是整个页面白屏然后刷新</li>
+<li>异步：只是局部刷新，比如评论点击加载更多</li>
+</ul>
+<h1 id="浏览器Ajax请求服务器"><a href="#浏览器Ajax请求服务器" class="headerlink" title="浏览器Ajax请求服务器"></a>浏览器Ajax请求服务器</h1><p>ajax请求机制如图：<br><img src="http://oho0zt67d.bkt.clouddn.com/ajax.png" alt=""></p>
+<p>选择异步请求的方式，常用的有三种，如$.ajax()、$.post()、$.get()。<br>其中$.ajax允许get/post两种请求方式，$.get()只允许get请求，$.post()只允许post请求方式。</p>
+<h2 id="SRC"><a href="#SRC" class="headerlink" title="SRC"></a>SRC</h2><p>新建一个html,代码如下:</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div&gt;
+    &lt;div id=&quot;showInfo&quot;&gt;&lt;/div&gt;
+    &lt;form id=&quot;form&quot;&gt;
+        用户名：&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot;&gt;
+        &lt;/br&gt;
+        密码：&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;
+        &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;登录&quot;&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+    &lt;script&gt;
+        window.onload = function (argument) {
+            // 定义一个btn事件，点击时就会触发
+            var btn = document.getElementById(&apos;btn&apos;);
+            btn.onclick = function(){
+                // 取到输入框中输入的username和password的值
+                var username = document.getElementById(&apos;username&apos;).value;
+                var password = document.getElementById(&apos;password&apos;).value;
+                // 定义XMLHTTPRequest
+                var xhr = null;
+                //在这里我们需要判断一下，因为IE始终是个个例
+                if (window.XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                }else{
+                    xhr = new ActiveXObjext(&quot;Microsoft.XMLHTTP&quot;);
+                }
+                // 准备好XMLHTTPRequest，开始进行异步处理
+                var url = &apos;./check.php?username=&apos;+username+&quot;&amp;password=&quot;+password;
+                xhr.open(&apos;get&apos; ,url ,true);
+                // onreadystatechange回调函数等待执行，就是xhr通知完服务器，服务器返回数据之后才知道做什么事情，在xhr.send()之后执行
+                xhr.onreadystatechange = function(){
+                    if(xhr.readyState == 4){
+                        if(xhr.status == 200){
+                            var data = xhr.responseText;
+                            if(data == 1){
+                                document.getElementById(&apos;showInfo&apos;).innerHTML=&apos;用户名或密码错误&apos;;
+                            }else if(data == 2){
+                                document.getElementById(&apos;showInfo&apos;).innerHTML=&apos;登陆成功!&apos;;
+                            }
+                        }
+                    }
+                }
+                // xhr实际去做的事情
+                xhr.send(null);
+                }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>前台向服务器发送数据请求，后台来进行判断返回什么值</p>
+<pre><code>&lt;?php 
+    $username = $_GET[&apos;username&apos;];
+    $password = $_GET[&apos;password&apos;];
+    if ($username == &apos;admin&apos; &amp;&amp; $password == &apos;123&apos;) {
+        echo 2;
+    }else {
+        echo 1;
+    }
+ ?&gt;
+</code></pre><p>在这里，我定义了username为admin并且password为123时返回2</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>接下来打画面测试一下，先输入正确的用户名密码<br><img src="http://oho0zt67d.bkt.clouddn.com/ajax_1.png" alt=""></p>
+<p>可以看到触发了一个事件，而页面没有刷新<br>点开这个事件就能看到服务器Response返回的是2，也就是我在后台进行的判断，如果用户名密码正确则返回2，前台接受这个数据，页面上就产生了变化，提示<code>登陆成功！</code></p>
+<p><img src="http://oho0zt67d.bkt.clouddn.com/ajax_2.png" alt=""></p>
+<p>然后输入错误的用户名密码</p>
+<p><img src="http://oho0zt67d.bkt.clouddn.com/ajax_3.png" alt=""><br>触发的事件中也写明了用户名和密码是什么<br>点开事件，此时服务器返回的是1，页面上提示<code>用户名或密码错误</code></p>
+<p><img src="http://oho0zt67d.bkt.clouddn.com/ajax_4.png" alt=""></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>客官，打赏一下嘛~~</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://oho0zt67d.bkt.clouddn.com/IMG_6192.JPG" alt="扶花弄柳 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ajax/" rel="tag">#ajax</a>
+          
+            <a href="/tags/jquery/" rel="tag">#jquery</a>
+          
+            <a href="/tags/php/" rel="tag">#php</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/05/Fiber/" rel="next" title="利用JavaScript实现斐波那契数列">
+                <i class="fa fa-chevron-left"></i> 利用JavaScript实现斐波那契数列
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -454,8 +712,17 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/IMG_6090.JPG"
@@ -545,6 +812,17 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#需求分析"><span class="nav-number">1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器Ajax请求服务器"><span class="nav-number">2.</span> <span class="nav-text">浏览器Ajax请求服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SRC"><span class="nav-number">2.1.</span> <span class="nav-text">SRC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#调试"><span class="nav-number">2.2.</span> <span class="nav-text">调试</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -641,6 +919,10 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
 
   
 
