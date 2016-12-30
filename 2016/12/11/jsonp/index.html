@@ -85,30 +85,27 @@
 
 
 <meta name="description" content="什么是jsonp
-一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+123一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+不过我们又发现，web页面上调用js文件时不受是否跨域的影响（不仅如此，凡是拥有”src”这个属性的标签都拥有跨域能力，如&amp;lt;script&amp;gt;、&amp;lt;img&amp;gt;、&amp;lt;iframe&amp;gt;）
 
-不过我们又发现，Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有”src”这个属性的标签都拥有跨域的能力，比如、、）；
-
-于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来">
+于是可以判断，当前阶">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jsonp解决第三方接口跨域问题">
 <meta property="og:url" content="http://yoursite.com/2016/12/11/jsonp/index.html">
 <meta property="og:site_name" content="MengLingqi">
 <meta property="og:description" content="什么是jsonp
-一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+123一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+不过我们又发现，web页面上调用js文件时不受是否跨域的影响（不仅如此，凡是拥有”src”这个属性的标签都拥有跨域能力，如&amp;lt;script&amp;gt;、&amp;lt;img&amp;gt;、&amp;lt;iframe&amp;gt;）
 
-不过我们又发现，Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有”src”这个属性的标签都拥有跨域的能力，比如、、）；
-
-于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来">
-<meta property="og:updated_time" content="2016-12-11T14:36:40.684Z">
+于是可以判断，当前阶">
+<meta property="og:updated_time" content="2016-12-30T13:03:04.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsonp解决第三方接口跨域问题">
 <meta name="twitter:description" content="什么是jsonp
-一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+123一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+不过我们又发现，web页面上调用js文件时不受是否跨域的影响（不仅如此，凡是拥有”src”这个属性的标签都拥有跨域能力，如&amp;lt;script&amp;gt;、&amp;lt;img&amp;gt;、&amp;lt;iframe&amp;gt;）
 
-不过我们又发现，Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有”src”这个属性的标签都拥有跨域的能力，比如、、）；
-
-于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来">
+于是可以判断，当前阶">
 
 
 
@@ -473,9 +470,8 @@
 
       
         <h1 id="什么是jsonp"><a href="#什么是jsonp" class="headerlink" title="什么是jsonp"></a>什么是jsonp</h1><ol>
-<li><p>一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；</p>
-</li>
-<li><p>不过我们又发现，<strong>Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有”src”这个属性的标签都拥有跨域的能力，比如<script>、<img>、<iframe>）</strong>；</p>
+<li>123一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；</li>
+<li><p>不过我们又发现，web页面上调用js文件时不受是否跨域的影响（不仅如此，凡是拥有”src”这个属性的标签都拥有跨域能力，如<code>&lt;script&gt;、&lt;img&gt;、&lt;iframe&gt;</code>）</p>
 </li>
 <li><p>于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来的HTML5之Websocket等方式不算）跨域访问数据就只有一种可能，那就是在远程服务器上设法把数据装进js格式的文件里，供客户端调用和进一步处理；</p>
 </li>
@@ -626,7 +622,7 @@
 <p>3.所以说，其实ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。</p>
 <p>4.还有就是，jsonp是一种方式或者说非强制性协议，如同ajax一样，它也不一定非要用json格式来传递数据，如果你愿意，字符串都行，只不过这样不利于用jsonp提供公开服务。</p>
 <p>总而言之，jsonp不是ajax的一个特例。</p>
-</script></strong></p></li></ol>
+</script></p>
       
     </div>
 
@@ -853,7 +849,7 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是jsonp"><span class="nav-number">1.</span> <span class="nav-text">什么是jsonp</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是jsonp"><span class="nav-number">1.</span> <span class="nav-text">什么是jsonp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原生jsonp解决跨域问题"><span class="nav-number">2.</span> <span class="nav-text">原生jsonp解决跨域问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery对jsonp的实现"><span class="nav-number">3.</span> <span class="nav-text">jquery对jsonp的实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ajax与jsonp的异同之处"><span class="nav-number">4.</span> <span class="nav-text">ajax与jsonp的异同之处</span></a></li></ol></div>
             
           </div>
         </section>
