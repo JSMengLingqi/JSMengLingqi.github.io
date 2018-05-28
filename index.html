@@ -419,6 +419,129 @@
             
               
                 
+                <a class="post-title-link" href="/2018/05/28/observer/" itemprop="url">
+                  观察者模式（发布订阅模式）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-05-28T21:22:48+08:00" content="2018-05-28">
+              2018-05-28
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          Q:你封装过发布订阅者模式吗
+今天被小伙伴提问了这么一个问题，于是抽出时间研究了一下
+
+定义一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知理解
+我是这么理解的，就像面试，面试官说回去等通知，面试者能不能做出响应则要依赖于面试官是否发出通知
+
+此时的角色我们可以这么看：
+
+面试官：被观察者
+面试者：观察者
+
+
+
+
+当然我们也可以理解为很多人订阅了这个接口，但是接口并不会触发，只有在发布的时候才会触发。
+
+此时的角色是
+
+接口：被观察者
+人：观察者
+
+
+
+在js中，事件就是发布订阅模式
+我们给一个元素添加点击操作，添加完就相当于是订阅，但是并不会触发。只有当点击之后
+          ...
+
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2018/05/28/observer/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/12/18/bootstrap/" itemprop="url">
                   bootstrap框架入门
                 </a>
@@ -575,10 +698,10 @@ Bootstrap 是当下最流行的前端框架（界面工具集）；
         
           
           什么是jsonp
-123一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
+一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；
 不过我们又发现，web页面上调用js文件时不受是否跨域的影响（不仅如此，凡是拥有”src”这个属性的标签都拥有跨域能力，如&lt;script&gt;、&lt;img&gt;、&lt;iframe&gt;）
 
-于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来的HTML5之Websocket等方式不算）跨域访问数据就只有一种可能，那就是在远程服务器上设法把数据装进js格式的文件里，供客户端调用
+于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来的HTML5之Websocket等方式不算）跨域访问数据就只有一种可能，那就是在远程服务器上设法把数据装进js格式的文件里，供客户端调用和进一
           ...
 
           <div class="post-more-link text-center">
@@ -1537,7 +1660,7 @@ np
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1554,7 +1677,7 @@ np
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1631,7 +1754,7 @@ np
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

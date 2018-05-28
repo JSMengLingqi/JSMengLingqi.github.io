@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="html,css3," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -84,48 +84,58 @@
 
 
 
-<meta name="description" content="先贴上一个微信图标
-首先需要两个标签元素：
-&amp;lt;div class=&amp;quot;bg&amp;quot;&amp;gt;
-&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-先画个背景：
-.bg {
-    width: 300px;
-    height: 300px;
-    background-color: #08c406;">
+<meta name="description" content="Q:你封装过发布订阅者模式吗
+今天被小伙伴提问了这么一个问题，于是抽出时间研究了一下
+
+定义一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知理解
+我是这么理解的，就像面试，面试官说回去等通知，面试者能不能做出响应则要依赖于面试官是否发出通知
+
+此时的角色我们可以这么看：
+
+面试官：被观察者
+面试者：观察者
+
+
+
+
+当然我们也可以理解为很多人订阅了这个接口，但是接口并不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WeChat图标的Css实现">
-<meta property="og:url" content="http://yoursite.com/2016/12/05/we-chat/index.html">
+<meta property="og:title" content="观察者模式（发布订阅模式）">
+<meta property="og:url" content="http://yoursite.com/2018/05/28/observer/index.html">
 <meta property="og:site_name" content="MengLingqi">
-<meta property="og:description" content="先贴上一个微信图标
-首先需要两个标签元素：
-&amp;lt;div class=&amp;quot;bg&amp;quot;&amp;gt;
-&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-先画个背景：
-.bg {
-    width: 300px;
-    height: 300px;
-    background-color: #08c406;">
-<meta property="og:image" content="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204131450.png">
-<meta property="og:image" content="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204200254.png">
-<meta property="og:image" content="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204201338.png">
-<meta property="og:image" content="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204131450.png">
-<meta property="og:updated_time" content="2016-12-05T14:25:10.390Z">
+<meta property="og:description" content="Q:你封装过发布订阅者模式吗
+今天被小伙伴提问了这么一个问题，于是抽出时间研究了一下
+
+定义一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知理解
+我是这么理解的，就像面试，面试官说回去等通知，面试者能不能做出响应则要依赖于面试官是否发出通知
+
+此时的角色我们可以这么看：
+
+面试官：被观察者
+面试者：观察者
+
+
+
+
+当然我们也可以理解为很多人订阅了这个接口，但是接口并不">
+<meta property="og:updated_time" content="2018-05-28T05:57:20.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WeChat图标的Css实现">
-<meta name="twitter:description" content="先贴上一个微信图标
-首先需要两个标签元素：
-&amp;lt;div class=&amp;quot;bg&amp;quot;&amp;gt;
-&amp;lt;div class=&amp;quot;inner&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-先画个背景：
-.bg {
-    width: 300px;
-    height: 300px;
-    background-color: #08c406;">
-<meta name="twitter:image" content="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204131450.png">
+<meta name="twitter:title" content="观察者模式（发布订阅模式）">
+<meta name="twitter:description" content="Q:你封装过发布订阅者模式吗
+今天被小伙伴提问了这么一个问题，于是抽出时间研究了一下
+
+定义一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知理解
+我是这么理解的，就像面试，面试官说回去等通知，面试者能不能做出响应则要依赖于面试官是否发出通知
+
+此时的角色我们可以这么看：
+
+面试官：被观察者
+面试者：观察者
+
+
+
+
+当然我们也可以理解为很多人订阅了这个接口，但是接口并不">
 
 
 
@@ -146,10 +156,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/12/05/we-chat/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/28/observer/"/>
 
 
-  <title> WeChat图标的Css实现 | MengLingqi </title>
+  <title> 观察者模式（发布订阅模式） | MengLingqi </title>
 </head>
   
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -449,7 +459,7 @@
             
             
               
-                WeChat图标的Css实现
+                观察者模式（发布订阅模式）
               
             
           </h1>
@@ -461,30 +471,11 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-12-05T22:17:22+08:00" content="2016-12-05">
-              2016-12-05
+            <time itemprop="dateCreated" datetime="2018-05-28T21:22:48+08:00" content="2018-05-28">
+              2018-05-28
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/CSS3/" itemprop="url" rel="index">
-                    <span itemprop="name">CSS3</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
@@ -508,144 +499,131 @@
       
 
       
-        <p>先贴上一个微信图标<br><img src="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204131450.png" alt=""></p>
-<p>首先需要两个标签元素：</p>
-<pre><code>&lt;div class=&quot;bg&quot;&gt;
-&lt;div class=&quot;inner&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>先画个背景：</p>
-<pre><code>.bg {
-    width: 300px;
-    height: 300px;
-    background-color: #08c406;
-    border-radius: 10px;
-    position: relative;
+        <h2 id="Q-你封装过发布订阅者模式吗"><a href="#Q-你封装过发布订阅者模式吗" class="headerlink" title="Q:你封装过发布订阅者模式吗"></a>Q:你封装过发布订阅者模式吗</h2><blockquote>
+<p>今天被小伙伴提问了这么一个问题，于是抽出时间研究了一下</p>
+</blockquote>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h3 id="一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知"><a href="#一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知" class="headerlink" title="一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知"></a>一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知</h3><h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><ul>
+<li><p>我是这么理解的，就像面试，面试官说回去等通知，面试者能不能做出响应则要依赖于面试官是否发出通知</p>
+</li>
+<li><p>此时的角色我们可以这么看：</p>
+<ul>
+<li>面试官：被观察者</li>
+<li>面试者：观察者</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>当然我们也可以理解为很多人订阅了这个接口，但是接口并不会触发，只有在发布的时候才会触发。</p>
+</li>
+<li><p>此时的角色是</p>
+<ul>
+<li>接口：被观察者</li>
+<li>人：观察者</li>
+</ul>
+</li>
+</ul>
+<h2 id="在js中，事件就是发布订阅模式"><a href="#在js中，事件就是发布订阅模式" class="headerlink" title="在js中，事件就是发布订阅模式"></a>在js中，事件就是<strong>发布订阅模式</strong></h2><ul>
+<li><p>我们给一个元素添加点击操作，添加完就相当于是订阅，但是并不会触发。只有当点击之后才会触发，这个点击的过程就是发布</p>
+</li>
+<li><p>因为可以给同一元素添加很多事件，所以订阅者可以有多个，但是发布只有一个，调用后所有的订阅者都会触发</p>
+</li>
+<li><p>打个比方，我们给一个元素写三个onclick，添加完以后都没有反应，但是一旦点击，三个onclick都会触发</p>
+</li>
+</ul>
+<h2 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h2><pre><code>function Foo(){
 }
-</code></pre><p>再画个大的椭圆：</p>
-<pre><code>.inner {
-    width: 180px;
-    height: 150px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    left: 35px;
-}
-</code></pre><p>小的椭圆利用<code>.inner</code>的<code>::before</code>伪元素实现：</p>
-<pre><code>&amp;::before {
-    content: &quot;&quot;;
-    width: 140px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #fff;
-    position: absolute;
-    top: 60px;
-    left: 90px;
-    border: 2px solid #08c406;
-}
-</code></pre><p>下图是现在的结果：</p>
-<p><img src="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204200254.png" alt=""></p>
-<p>剩下的四个圆可以用css3的<code>box-shadow</code>属性实现，一般用于重复性高的东西</p>
-<p>利用<code>.bg</code>的<code>::before</code>伪元素实现这些圆：</p>
-<pre><code>&amp;::before {
-   content: &quot;&quot;;
-   position: absolute;
-   width: 16px;
-   height: 16px;
-   border-radius: 50%;
-   background-color: #08c406;
-   top: 150px;
-   left: 155px;
-   z-index: 2;
-   box-shadow: 70px 0 #08c406, -70px -50px 0 2px #08c406, 0 -50px 0 2px #08c406;
-}
-</code></pre><p><code>::before</code>本身会实现一个圆(一个小圆),然后利用<code>box-shadow</code>属性实现其它的三个圆。<br>来看看现在的效果：</p>
-<p><img src="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204201338.png" alt=""></p>
-<p>现在就剩下两个角了，想想还有哪些东西没用上？还有两个伪元素，分别是<code>.bg</code>的<code>::after</code>和<code>.inner</code>的<code>::after</code>，刚好可以实现两个角。<br>这两个角其实就是平常的小三角，然后再旋转个<code>45</code>度，<code>CSS</code>实现小三角太常见了：</p>
-<pre><code>.bg::after {
-    content: &quot;&quot;;
-    border-width: 30px 12px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    position: absolute;
-    top: 182px;
-    left: 50px;
-    transform: rotate(45deg);
-}
+//类似于jq中添加事件的三个元素：元素（obj）、事件（evevts）、回调（fn）
+Foo.prototype.bind = function(obj,events,fn){  
+//往对象身上挂载自定义属性
+//这样就可以根据对象obj找到相应的事件从而找到相应的回调函数
+    obj.listeners = obj.listeners || {};
+    obj.listeners[events] = obj.listeners[events] || [];
+    obj.listeners[events].push(fn);
+};
+//触发自定义事件，相当于jq中的trigger()
+Foo.prototype.fire = function(obj,events){
+//循环找到当前对象下面指定事件下面的所有回调函数，对其进行调用
+    for(var i=0;i&lt;obj.listeners[events].length;i++){
+        obj.listeners[events][i]();
+    }
+};
+var div1 = document.getElementById(&apos;div1&apos;);
+var obj = new Foo();
 
-.inner::after {
-    content: &quot;&quot;;
-    border-width: 30px 10px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    position: absolute;
-    top: 155px;
-    left: 200px;
-    transform: rotate(-45deg);
+//给div添加两个自定义事件=&gt;观察者（订阅）
+obj.bind(div1,&apos;show&apos;,function(){
+    console.log(123);
+});
+obj.bind(div1,&apos;show&apos;,function(){
+    console.log(456);
+});
+//fire触发的时候，上面两个事件都会触发=&gt;被观察者（发布）
+obj.fire(div1,&apos;show&apos;);
+</code></pre><h2 id="再举个例子"><a href="#再举个例子" class="headerlink" title="再举个例子"></a>再举个例子</h2><h3 id="拖拽发布，滚动发布"><a href="#拖拽发布，滚动发布" class="headerlink" title="拖拽发布，滚动发布"></a>拖拽发布，滚动发布</h3><pre><code>function Foo(){
 }
-</code></pre><p>最终效果：<br><img src="http://zlwis.me/assets/blogImg/QQ%E5%9B%BE%E7%89%8720160204131450.png" alt=""></p>
-<p>全部<code>css</code>代码：</p>
-<pre><code>@mixin pos($left, $top) {
-  position: absolute;
-  left: $left;
-  top: $top;
+Foo.prototype.bind = function(obj,events,fn){
+    obj.listeners = obj.listeners || {};
+    obj.listeners[events] = obj.listeners[events] || [];
+    obj.listeners[events].push(fn);
+};
+Foo.prototype.fire = function(obj,events){
+    var args = Array.prototype.slice.call(arguments).slice(2);
+    for(var i=0;i&lt;obj.listeners[events].length;i++){
+        obj.listeners[events][i].apply(obj,args);
+    }
+};
+
+var div1 = document.getElementById(&apos;div1&apos;);
+function ScaleMethod(elem){
+    this.elem = elem;
+    this.scale();
+    this.wheel();
 }
-
-.bg {
-  width: 300px;
-  height: 300px;
-  background-color: #08c406;
-  border-radius: 10px;
-  position: relative;
-
-  &amp;::before {
-   @include pos(155px, 150px);
-   content: &quot;&quot;;
-   width: 16px;
-   height: 16px;
-   border-radius: 50%;
-   background-color: #08c406;
-   z-index: 2;
-   box-shadow: 70px 0 #08c406, -70px -50px 0 2px #08c406, 0 -50px 0 2px #08c406;
-  }
-
-  &amp;::after {
-   @include pos(50px, 182px);
-   content: &quot;&quot;;
-   border-width: 30px 12px;
-   border-style: solid;
-   border-color: #fff transparent transparent transparent;
-   transform: rotate(45deg);
- }
-
- .inner {
-   width: 180px;
-   height: 150px;
-   border-radius: 50%;
-   background-color: #fff;
-   @include pos(35px, 60px);
-
-   &amp;::before {
-    @include pos(90px, 60px);
-    content: &quot;&quot;;
-    width: 140px;
-    height: 120px;
-    border-radius: 50%;
-    background-color: #fff;
-    border: 2px solid #08c406;
-   }
-
-   &amp;::after {
-    @include pos(200px, 155px);
-    content: &quot;&quot;;
-    border-width: 30px 10px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-    transform: rotate(-45deg);
-   }
-  }
-}
-</code></pre>
+ScaleMethod.prototype.scale = function(){
+    var downX = 0;
+    var downY = 0;
+    var downW = 0;
+    var downH = 0;
+    var This = this;
+    this.elem.onmousedown = function(ev){
+        downX = ev.pageX;
+        downY = ev.pageY;
+        downW = This.elem.offsetWidth;
+        downH = This.elem.offsetHeight;
+        document.onmousemove = function(ev){
+            This.elem.style.width = ev.pageX - downX + downW + &apos;px&apos;;
+            This.elem.style.height = ev.pageY - downY + downH + &apos;px&apos;;
+            obj.fire(This,&apos;scale&apos;,This.elem.offsetWidth,This.elem.offsetHeight);
+        };
+        document.onmouseup = function(){
+            document.onmousemove = null;
+            document.onmouseup = null;
+        };
+        return false;
+    };
+};
+ScaleMethod.prototype.wheel = function(){
+    var This = this;
+    this.elem.onmousewheel = function(ev){
+        if(ev.wheelDelta &gt; 0){
+            this.style.height = this.offsetHeight - 10 + &apos;px&apos;;
+        }
+        else{
+            this.style.height = this.offsetHeight + 10 + &apos;px&apos;;
+        }
+        obj.fire(This,&apos;scale&apos;,This.elem.offsetWidth,This.elem.offsetHeight);
+    };
+};
+var obj = new Foo();
+var s1 = new ScaleMethod(div1);
+//订阅者，添加显示出滚轮滚动时的当前坐标
+obj.bind(s1,&apos;scale&apos;,function(w,h){
+    div1.innerHTML = w + &apos;,&apos; + h;
+});
+</code></pre><blockquote>
+<p>每当点击 移动方块，或者鼠标滚轮滑动时，都会触发事件（发布），订阅就会打印出相应坐标</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？"><a href="#设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？" class="headerlink" title="设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？"></a>设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？</h3>
       
     </div>
 
@@ -683,9 +661,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/html/" rel="tag">#html</a>
-          
-            <a href="/tags/css3/" rel="tag">#css3</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
         </div>
       
@@ -694,17 +670,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/04/next-optimize/" rel="next" title="hexo-nexT主题改进之路">
-                <i class="fa fa-chevron-left"></i> hexo-nexT主题改进之路
+              <a href="/2016/12/18/bootstrap/" rel="next" title="bootstrap框架入门">
+                <i class="fa fa-chevron-left"></i> bootstrap框架入门
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/12/05/Fiber/" rel="prev" title="利用JavaScript实现斐波那契数列">
-                利用JavaScript实现斐波那契数列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -874,7 +846,7 @@ var duoshuoQuery = {short_name:"yuzhiyun"};
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Q-你封装过发布订阅者模式吗"><span class="nav-number">1.</span> <span class="nav-text">Q:你封装过发布订阅者模式吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知"><span class="nav-number">2.1.</span> <span class="nav-text">一个被观察者所管理所有相依于它的观察者物件，并且在本身的状态改变时主动发出通知</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解"><span class="nav-number">3.</span> <span class="nav-text">理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在js中，事件就是发布订阅模式"><span class="nav-number">4.</span> <span class="nav-text">在js中，事件就是发布订阅模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举个栗子"><span class="nav-number">5.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再举个例子"><span class="nav-number">6.</span> <span class="nav-text">再举个例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#拖拽发布，滚动发布"><span class="nav-number">6.1.</span> <span class="nav-text">拖拽发布，滚动发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？"><span class="nav-number">7.1.</span> <span class="nav-text">设计模式这玩意真的是要把我绕晕…不知道看完博文你对发布订阅模式有没有理解呢？</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
